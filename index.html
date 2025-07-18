@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio Pessoal</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+</head>
+<body class="bg-light">
+
+  <!-- HEADER -->
+  <header class="bg-dark text-white py-4">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <h1 class="h4 mb-0">Seu Nome</h1>
+      <nav class="mt-2 mt-md-0">
+        <a href="#sobre" class="text-white me-3"><i class="bi bi-person-circle"></i> Sobre</a>
+        <a href="#projetos" class="text-white me-3"><i class="bi bi-code-slash"></i> Projetos</a>
+        <a href="#contato" class="text-white"><i class="bi bi-envelope"></i> Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SOBRE MIM -->
+  <section id="sobre" class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-md-4 text-center mb-4 mb-md-0">
+        <img src="sua-foto.png" alt="Foto de perfil" class="rounded-circle img-fluid" style="max-width: 200px;" />
+      </div>
+      <div class="col-md-8">
+        <h2>Sobre mim</h2>
+        <p>Olá! Sou estudante de desenvolvimento web e este é meu primeiro portfólio. Gosto de aprender novas tecnologias e construir soluções criativas para a web. Tenho interesse em front-end, usabilidade e acessibilidade digital. Estou constantemente em busca de novos desafios para aplicar e aperfeiçoar minhas habilidades técnicas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETOS -->
+  <section id="projetos" class="container py-5 bg-white">
+    <h2>Projetos</h2>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Projeto 1</h5>
+            <p class="card-text">Descrição breve do projeto.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm hover-shadow">
+          <div class="card-body">
+            <h5 class="card-title">Projeto 2</h5>
+            <p class="card-text">Descrição breve do projeto.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="container py-5">
+    <h2>Contato</h2>
+    <form id="form-contato">
+      <div class="mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" required />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" class="form-control" id="email" required />
+      </div>
+      <div class="mb-3">
+        <label for="mensagem" class="form-label">Mensagem</label>
+        <textarea class="form-control" id="mensagem" rows="3" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white text-center py-4">
+    <p class="mb-2"><i class="bi bi-c-circle"></i> 2025 - Seu Nome</p>
+    <div>
+      <a href="https://github.com/seuusuario" class="text-white me-3"><i class="bi bi-github"></i></a>
+      <a href="https://linkedin.com/in/seuusuario" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
+      <a href="mailto:seuemail@email.com" class="text-white"><i class="bi bi-envelope"></i></a>
+    </div>
+  </footer>
+
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <button id="btn-topo" class="btn btn-primary position-fixed bottom-0 end-0 m-4" style="display: none;">
+    <i class="bi bi-arrow-up-short"></i>
+  </button>
+
+  <!-- SCRIPT -->
+  <script>
+    window.addEventListener('scroll', () => {
+      const btn = document.getElementById('btn-topo');
+      btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+
+    document.getElementById('btn-topo').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.getElementById('form-contato').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const mensagem = document.getElementById('mensagem').value;
+      alert(`Obrigado, ${nome}! Sua mensagem foi enviada com sucesso.\n\nE-mail: ${email}\nMensagem: ${mensagem}`);
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
